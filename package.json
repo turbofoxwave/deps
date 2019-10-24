@@ -1,0 +1,21 @@
+{
+  "name": "deps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive ./test/*.test.js",
+    "debug-test": "mocha --inspect-brk=0.0.0.0:9229 --recursive ./test/*.test.js",
+    "setup": "npm run setup-example && npm run setup-example-circular",
+    "setup-example": "cd ./test/example/a && npm install && cd ../b && npm install && cd ../c && npm install",
+    "setup-example-circular": "cd ./test/example-circular/a && npm install && cd ../b && npm install && cd ../c && npm install"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "lodash": "^4.17.15",
+    "mocha": "^6.2.2",
+    "recursive-readdir": "^2.2.2"
+  }
+}
