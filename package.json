@@ -1,6 +1,6 @@
 {
-  "name": "@bitgenetics/monodeps",
-  "version": "1.0.0",
+  "name": "monodeps",
+  "version": "1.0.1",
   "description": "simple tool to return list of cross dependant packages in a monorepo",
   "main": "index.js",
   "scripts": {
