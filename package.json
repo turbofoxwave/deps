@@ -1,6 +1,6 @@
 {
   "name": "monodeps",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "simple tool to return list of cross dependant packages in a monorepo",
   "main": "index.js",
   "keywords": ["mono", "deps", "dependency", "dependencies"],
