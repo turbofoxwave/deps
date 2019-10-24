@@ -12,6 +12,8 @@
   },
   "author": "Michael Benjamin <turbofoxwave@gmail.com>",
   "license": "ISC",
+  "private": false,
+
   "dependencies": {
     "chai": "^4.2.0",
     "lodash": "^4.17.15",
