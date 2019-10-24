@@ -1,7 +1,7 @@
 {
-  "name": "deps",
+  "name": "@bitgenetics/monodeps",
   "version": "1.0.0",
-  "description": "",
+  "description": "simple tool to return list of cross dependant packages in a monorepo",
   "main": "index.js",
   "scripts": {
     "test": "mocha --recursive ./test/*.test.js",
@@ -10,7 +10,7 @@
     "setup-example": "cd ./test/example/a && npm install && cd ../b && npm install && cd ../c && npm install",
     "setup-example-circular": "cd ./test/example-circular/a && npm install && cd ../b && npm install && cd ../c && npm install"
   },
-  "author": "",
+  "author": "Michael Benjamin <turbofoxwave@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "chai": "^4.2.0",
