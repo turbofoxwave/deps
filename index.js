@@ -20,7 +20,7 @@ module.exports = class Deps{
     let packages = []
     for(let f = 0 ; f < files.length; f++){
       let file = files[f]
-      packages.push( require(file) )
+      packages.push({ path: file, package: require(file)  }  )
     }
 
 
@@ -28,21 +28,21 @@ module.exports = class Deps{
 
     packages.sort( function(a, b){
 
-      let isBinADeps = _.find(a.dependencies, function(val,key){
-        return key === b.name
+      let isBinADeps = _.find(a.package.dependencies, function(val,key){
+        return key === b.package.name
       })
 
-      isBinADeps = isBinADeps || _.find(a.devDependencies, function(val, key){
-        return key === b.name
+      isBinADeps = isBinADeps || _.find(a.package.devDependencies, function(val, key){
+        return key === b.package.name
       })
 
 
-      let isAInBDeps = _.find(b.dependencies, function(val, key){
-        return key === a.name
+      let isAInBDeps = _.find(b.package.dependencies, function(val, key){
+        return key === a.package.name
       })
 
-      isAInBDeps = isAInBDeps || _.find(b.devDependencies, function(val, key){
-        return key === a.name
+      isAInBDeps = isAInBDeps || _.find(b.package.devDependencies, function(val, key){
+        return key === a.package.name
       })
 
       if(isAInBDeps && isBinADeps){

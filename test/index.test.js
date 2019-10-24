@@ -10,9 +10,9 @@ describe("deps core functionality - ", function(){
     let packages = await deps.loadPackagesAsync(__dirname+"/example")
     assert.strictEqual(packages.length, 3)
 
-    assert.strictEqual(packages[0].name, 'a')
-    assert.strictEqual(packages[1].name, 'b')
-    assert.strictEqual(packages[2].name, 'c')
+    assert.strictEqual(packages[0].package.name, 'a')
+    assert.strictEqual(packages[1].package.name, 'b')
+    assert.strictEqual(packages[2].package.name, 'c')
 
   })
 
