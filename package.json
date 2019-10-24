@@ -1,6 +1,6 @@
 {
   "name": "monodeps",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "simple tool to return list of cross dependant packages in a monorepo",
   "main": "index.js",
   "keywords": ["mono", "deps", "dependency", "dependencies"],
@@ -14,7 +14,10 @@
   "author": "Michael Benjamin <turbofoxwave@gmail.com>",
   "license": "ISC",
   "private": false,
-
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/turbofoxwave/deps.git"
+  },
   "dependencies": {
     "chai": "^4.2.0",
     "lodash": "^4.17.15",
