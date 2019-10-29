@@ -1,11 +1,25 @@
+'use strict';
+
 const readdir = require('recursive-readdir')
 const _ =       require('lodash')
+
+
 module.exports = class Deps{
 
+  /**
+   * turns true if the given file objected and related stats object represent a situation where the file should be ignored.
+   * @param {object} file 
+   * @param {object} stats 
+   * @returns {boolean} true if file should be ignored.
+   */
   static ignore(file,stats){
     return (stats.isDirectory() && file.includes('node_modules')) || (! stats.isDirectory() && !file.match(/[/\\]{0,1}package\.json/))
   }
 
+  /**
+   * gets a list of files for each package.json file found in the target folder hierarchy.
+   * @param {string} path - file system path to root folder to use in search for package.json files
+   */
   static async getPackagesAsync(path){
     let files = await readdir(path, [function ignore(file, stats){
       let shouldIgnore = Deps.ignore(file, stats)
@@ -15,6 +29,11 @@ module.exports = class Deps{
     return files
   }
 
+  /**
+   * return a sorted list of package objects with related file system path.
+   * @param {string} path - file system path to root folder to use in search for package.json files
+   * @returns {array} [{path:string, package:object}, ...]
+   */
   static async loadPackagesAsync(path){
     let files = await Deps.getPackagesAsync(path)
     let packages = []
