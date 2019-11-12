@@ -1,9 +1,14 @@
 {
   "name": "monodeps",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "simple tool to return list of cross dependant packages in a monorepo",
   "main": "index.js",
-  "keywords": ["mono", "deps", "dependency", "dependencies"],
+  "keywords": [
+    "mono",
+    "deps",
+    "dependency",
+    "dependencies"
+  ],
   "scripts": {
     "test": "mocha --recursive ./test/*.test.js",
     "debug-test": "mocha --inspect-brk=0.0.0.0:9229 --recursive ./test/*.test.js",
