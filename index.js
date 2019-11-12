@@ -25,6 +25,7 @@ module.exports = class Deps{
 
 
     //apply dep analysis to sort list.
+    // console.log(JSON.stringify(_.map(packages, function(v,k){ return v.package.name})))
 
     packages.sort( function(a, b){
 
@@ -58,7 +59,7 @@ module.exports = class Deps{
         return -1
       }
 
-      return 0
+      return 1
 
     })
 

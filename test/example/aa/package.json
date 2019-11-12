@@ -1,5 +1,5 @@
 {
-  "name": "c",
+  "name": "aa",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,6 +11,6 @@
   "dependencies": {
     "a": "file:../a",
     "b": "file:../b",
-    "aa": "file:../aa"
+    "z": "file:../z"
   }
 }
