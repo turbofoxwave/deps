@@ -7,7 +7,8 @@ on:
   push:
     branches: [ master ]
 
-
+env: 
+  SECRET_KEY: ${{ secrets.SECRET_KEY }}
 jobs:
   build:
 
@@ -18,8 +19,6 @@ jobs:
         node-version: [10.x, 12.x, 14.x]
 
     steps:
-    - env: 
-        SECRET_KEY: ${{ secrets.SECRET_KEY }}
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
