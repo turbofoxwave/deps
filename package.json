@@ -1,7 +1,8 @@
 {
   "name": "monodeps",
-  "version": "1.0.7",
-  "description": "simple tool to return list of cross dependant packages in a monorepo",
+  "version": "1.0.8",
+  "description": "[DEPRECATED] Use npm/pnpm/yarn workspaces with Changesets or pnpm publish -r instead",
+  "deprecated": "Use npm/pnpm/yarn workspaces with Changesets or pnpm publish -r. Migration guide: https://github.com/turbofoxwave/deps#alternatives",
   "main": "index.js",
   "keywords": [
     "mono",

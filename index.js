@@ -3,6 +3,21 @@
 const readdir = require('recursive-readdir')
 const _ =       require('lodash')
 
+const DEPRECATION_URL = 'https://github.com/turbofoxwave/deps#alternatives'
+const DEPRECATION_MESSAGE =
+  'monodeps is deprecated. Use npm/pnpm/yarn workspaces with Changesets or pnpm publish -r. See ' +
+  DEPRECATION_URL
+
+function emitDeprecationWarning() {
+  if (emitDeprecationWarning.emitted) {
+    return
+  }
+  emitDeprecationWarning.emitted = true
+  process.emitWarning(DEPRECATION_MESSAGE, {
+    type: 'DeprecationWarning',
+    code: 'MONODEPS_DEPRECATED',
+  })
+}
 
 module.exports = class Deps{
 
@@ -21,6 +36,7 @@ module.exports = class Deps{
    * @param {string} path - file system path to root folder to use in search for package.json files
    */
   static async getPackagesAsync(path){
+    emitDeprecationWarning()
     let files = await readdir(path, [function ignore(file, stats){
       let shouldIgnore = Deps.ignore(file, stats)
       return shouldIgnore
